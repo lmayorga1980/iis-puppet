@@ -14,5 +14,11 @@ class application::test::vdirs{
     iis_app         => "${env}anothersite/",
     physicalpath    => "$basepath\\${env}\\Folder1\\SubFolder1",
   }
+
+  iis_vdir {"${env}anothersite/myvirtualdir":
+    ensure          => present,
+    iis_app         => "${env}anothersite/",
+    physicalpath    => "C:\\Program Files\\Internet Explorer",
+  }
   }
 }
